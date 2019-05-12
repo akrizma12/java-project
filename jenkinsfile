@@ -14,7 +14,7 @@ node('linux'){
         sh "aws s3 cp ${WORKSPACE}/dist/rectangle-${BUILD_NUMBER}.jar s3://karishma-assignment-4/" 
     }
     stage('report'){
-    
+        sh "aws cloudformation describe stack-resources --region us-east-1 --stack-name jenkins"
     }
 
 }
