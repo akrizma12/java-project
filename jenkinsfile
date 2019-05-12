@@ -1,6 +1,8 @@
+properties([pipelineTriggers([githubPush()])])
+
 node('linux'){
     stage('test'){
-        sh "ant -buildfile test.xml -v"
+        sh "ant -f test.xml -v"
     }
     stage('build'){
     
