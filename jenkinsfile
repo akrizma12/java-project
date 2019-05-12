@@ -1,6 +1,6 @@
 node('linux'){
     stage('test'){
-        ant -f test.xml -v
+        sh 'ant -f test.xml -v'
     }
     stage('build'){
     
